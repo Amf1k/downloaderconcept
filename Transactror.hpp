@@ -9,10 +9,14 @@ class IAction;
 class DownloadPool;
 class BittorrentSession;
 
-class Transactror : QObject {
+class Transactror : public QObject {
   Q_OBJECT
  public:
   explicit Transactror(QObject* parent = nullptr);
+  void start();
+  void pause();
+  void resume();
+  void stop();
 
  private:
   QQueue<QSharedPointer<IAction>> _actionsQueue;

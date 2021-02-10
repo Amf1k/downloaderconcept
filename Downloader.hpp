@@ -9,7 +9,7 @@
 
 namespace Xsolla::Downloader {
 
-class Transactor;
+class Transactror;
 
 class Downloader : public QObject {
   Q_OBJECT
@@ -34,7 +34,7 @@ class Downloader : public QObject {
  private:
   bool isP2PEnabled;
   QScopedPointer<QThread> _pWorkerThread;
-  QSharedPointer<Transactor> _pTransactor;
+  QSharedPointer<Transactror> _pTransactor;
   QScopedPointer<IServerAnswerService> _pServerAnswerService;
 };
 

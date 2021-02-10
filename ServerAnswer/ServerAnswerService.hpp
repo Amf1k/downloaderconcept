@@ -8,10 +8,12 @@
 #include "ServerAnswer/IServerAnswerService.hpp"
 
 namespace Xsolla::Downloader {
+class Transactror;
 class ServerAnswerService : public IServerAnswerService {
   Q_OBJECT
  public:
-  explicit ServerAnswerService(QObject* parent = nullptr);
+  explicit ServerAnswerService(QSharedPointer<Transactror> pTransactror,
+                               QObject* parent = nullptr);
 
  public:
   void receive() override;
