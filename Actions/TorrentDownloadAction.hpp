@@ -9,8 +9,7 @@ class Transactror;
 class TorrentDownloadAction : public IAction {
   Q_OBJECT
  public:
-  explicit TorrentDownloadAction(QSharedPointer<Transactror> pTransactror,
-                                 QObject* parent = nullptr);
+  explicit TorrentDownloadAction(QObject* parent = nullptr);
 
   // IAction interface
  public:

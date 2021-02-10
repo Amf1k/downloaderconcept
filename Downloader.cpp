@@ -1,5 +1,6 @@
 #include "Downloader.hpp"
 
+#include "ServerAnswer/ServerAnswerService.hpp"
 #include "ServerAnswer/XMLServerAnswerParser.hpp"
 #include "Transactror.hpp"
 
@@ -8,7 +9,7 @@ Xsolla::Downloader::Downloader::Downloader(bool p2pEnabled, QObject* parent)
       isP2PEnabled(p2pEnabled),
       _pWorkerThread(new QThread),
       _pTransactor(QSharedPointer<Transactror>::create()),
-      _pServerAnswerService(new XMLServerAnswerParser(_pTransactor)) {
+      _pServerAnswerService(new ServerAnswerService()) {
   _pTransactor->moveToThread(_pWorkerThread.data());
   connect(_pServerAnswerService.data(), &IServerAnswerService::successReceive,
           this, &Downloader::handleOnSuccessReceivedServerAnswer);

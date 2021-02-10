@@ -3,14 +3,11 @@
 
 #include <QObject>
 
-class DownloadPool : public QObject
-{
-    Q_OBJECT
-public:
-    explicit DownloadPool(QObject *parent = nullptr);
-
-signals:
-
+class DownloadPool : public QObject {
+  Q_OBJECT
+ public:
+  explicit DownloadPool(QObject* parent = nullptr);
+  void addDownload(const QString& url, const QString& downloadPath);
 };
 
-#endif // DOWNLOADPOOL_HPP
+#endif  // DOWNLOADPOOL_HPP

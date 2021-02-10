@@ -2,11 +2,8 @@
 
 #include "ServerAnswer/XMLServerAnswerParser.hpp"
 
-Xsolla::Downloader::ServerAnswerService::ServerAnswerService(
-    QSharedPointer<Transactror> pTransactror,
-    QObject* parent)
-    : IServerAnswerService(parent),
-      _pParser(new XMLServerAnswerParser(pTransactror)) {}
+Xsolla::Downloader::ServerAnswerService::ServerAnswerService(QObject* parent)
+    : IServerAnswerService(parent), _pParser(new XMLServerAnswerParser()) {}
 
 QQueue<QSharedPointer<Xsolla::Downloader::IAction>>
 Xsolla::Downloader::ServerAnswerService::getActions() {

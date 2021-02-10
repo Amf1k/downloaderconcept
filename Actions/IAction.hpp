@@ -3,6 +3,7 @@
 #include <QObject>
 
 #include "ActionTypeWrapper.hpp"
+#include "Actions/ActionEnv.hpp"
 
 namespace Xsolla::Downloader {
 
@@ -10,7 +11,7 @@ class IAction : public QObject {
   Q_OBJECT
  public:
   virtual ~IAction() = default;
-  virtual void execute() = 0;
+  virtual void execute(ActionEnv env) = 0;
   virtual void stop() = 0;
   virtual void pause() = 0;
   virtual void resume() = 0;

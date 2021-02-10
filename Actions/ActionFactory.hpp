@@ -6,15 +6,12 @@ namespace Xsolla::Downloader {
 class Transactror;
 class ActionFactory : public IActionFactory {
  public:
-  explicit ActionFactory(QSharedPointer<Transactror> pTransactror);
+  ActionFactory();
 
   // IActionFactory interface
  public:
   QSharedPointer<IAction> createAction(
       ActionTypeWrapper::ActionType actionType) override;
-
- private:
-  QSharedPointer<Transactror> _pTransactror;
 };
 }  // namespace Xsolla::Downloader
 

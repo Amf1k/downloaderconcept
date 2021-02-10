@@ -7,14 +7,13 @@ class Transactror;
 class IActionFactory;
 class XMLServerAnswerParser : public IServerAnswerParser {
  public:
-  explicit XMLServerAnswerParser(QSharedPointer<Transactror> pTransactror);
+  explicit XMLServerAnswerParser();
 
   // IServerAnswerParser interface
  public:
   QQueue<QSharedPointer<IAction>> parse(const QByteArray& data) override;
 
  private:
-  QSharedPointer<Transactror> _pTransactror;
   QSharedPointer<IActionFactory> _pActionFactory;
 };
 }  // namespace Xsolla::Downloader

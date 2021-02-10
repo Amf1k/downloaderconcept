@@ -2,11 +2,9 @@
 
 #include "Actions/ActionFactory.hpp"
 
-Xsolla::Downloader::XMLServerAnswerParser::XMLServerAnswerParser(
-    QSharedPointer<Xsolla::Downloader::Transactror> pTransactror)
+Xsolla::Downloader::XMLServerAnswerParser::XMLServerAnswerParser()
     : IServerAnswerParser(),
-      _pTransactror(pTransactror),
-      _pActionFactory(QSharedPointer<ActionFactory>::create(_pTransactror)) {}
+      _pActionFactory(QSharedPointer<ActionFactory>::create()) {}
 
 QQueue<QSharedPointer<Xsolla::Downloader::IAction>>
 Xsolla::Downloader::XMLServerAnswerParser::parse(const QByteArray& data) {

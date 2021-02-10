@@ -1,11 +1,15 @@
 #ifndef BITTORRENTSESSION_HPP
 #define BITTORRENTSESSION_HPP
+#include <QSharedPointer>
 
-
-class BittorrentSession
-{
-public:
-    BittorrentSession();
+namespace Xsolla::Downloader {
+class BittorrentFileInfo;
+class BittorrentSession {
+ public:
+  BittorrentSession();
+  QSharedPointer<BittorrentFileInfo> addTorrentFile(
+      const QString& torrentPath,
+      const QString& downloadPath);
 };
-
-#endif // BITTORRENTSESSION_HPP
+}  // namespace Xsolla::Downloader
+#endif  // BITTORRENTSESSION_HPP

@@ -5,7 +5,7 @@ Xsolla::Downloader::TorrentDownloadAction::TorrentDownloadAction(
     QObject* parent)
     : IAction(parent), _pTransactror(pTransactror) {}
 
-void Xsolla::Downloader::TorrentDownloadAction::execute() {}
+void Xsolla::Downloader::TorrentDownloadAction::execute(ActionEnv env) {}
 
 void Xsolla::Downloader::TorrentDownloadAction::stop() {}
 

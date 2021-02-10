@@ -12,8 +12,7 @@ class Transactror;
 class ServerAnswerService : public IServerAnswerService {
   Q_OBJECT
  public:
-  explicit ServerAnswerService(QSharedPointer<Transactror> pTransactror,
-                               QObject* parent = nullptr);
+  explicit ServerAnswerService(QObject* parent = nullptr);
 
  public:
   void receive() override;
